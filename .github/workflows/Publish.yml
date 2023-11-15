@@ -29,11 +29,10 @@ jobs:
           mdbook-version: "latest"
       - name: Install dependicies
         run:
-          cargo install mdbook 
           cargo install mdbook-katex 
           cargo install mdbook-admonish 
-          cargo install mdbook-pdf
-          pip install mdbook-pdf-outline
+          #cargo install mdbook-pdf
+          #pip install mdbook-pdf-outline
           
       - run: mdbook build . --dest-dir ./book # --dest-dir is relative to <dir>
 
