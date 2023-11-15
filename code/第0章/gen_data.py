@@ -37,10 +37,9 @@ def generate_data_from_rule(rule : Rule, size : int):
     ys = calculate_price(xs, rule)
     rs = np.array([rule.id for _ in range(size)])
     res = np.stack([xs, ys, rs], axis=-1).reshape(-1,3)
-    missing_value = (np.random.uniform(0,1,size) <= 0.1)
-    which_to_nan = np.random.randint(0,2,size)[missing_value]
-    for i in range(len(which_to_nan)):
-        res[missing_value][i][which_to_nan[i]] = np.nan
+    missing_indices = (np.random.uniform(0,1,size)<=0.1)
+    which_to_nan = np.random.randint(0,2,size)[missing_indices]
+    res[missing_indices,which_to_nan] = np.nan
     return res
 
 if __name__ == "__main__":
