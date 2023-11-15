@@ -27,6 +27,7 @@ jobs:
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: "latest"
+          
       - name: Install dependicies
         run:
           cargo install mdbook-katex 
