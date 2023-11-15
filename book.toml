@@ -56,7 +56,7 @@ static_site_url = "https://aye10032.gitbook.io/computernetwork/"
 #prefer-css-page-size = true
 
 [output.html]
-additional-css = ['.\mdbook-admonish.css']
+additional-css = ['mdbook-admonish.css']
 
 #[output.pdf-outline]
 #like-wkhtmltopdf = true
